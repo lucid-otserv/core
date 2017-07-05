@@ -1,4 +1,7 @@
 #!/bin/sh
+apt-get remove cmake
+apt-get purge cmake
+
 if [ -d $HOME/.cache/cmake-3.8.2 ]; then
     cd $HOME/.cache/cmake-3.8.2
     make install

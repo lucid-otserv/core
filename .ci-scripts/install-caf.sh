@@ -1,7 +1,4 @@
 #!/bin/sh
-apt-get remove cmake
-apt-get purge cmake
-
 if [ -d $HOME/.cache/actor-framework ]; then
     cd $HOME/.cache/actor-framework
     make install

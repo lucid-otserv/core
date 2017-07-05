@@ -1,4 +1,3 @@
-dist: trusty
 sudo: required
 cache:
   directories:
@@ -7,19 +6,25 @@ language:
   - cpp
 compiler:
   - gcc
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - gcc-6
-      - g++-6
+matrix:
+  include:
+    - os: linux
+      dist: trusty
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - gcc-6
+            - g++-6
+      env:
+         - OS=trusty
+         - CC=/usr/bin/gcc-6
+         - CXX=/usr/bin/g++-6
 install:
   - sudo ln -s /usr/bin/gcc-6 /usr/local/bin/gcc
   - sudo ln -s /usr/bin/g++-6 /usr/local/bin/g++
   - sudo sh $TRAVIS_BUILD_DIR/.ci-scripts/install-cmake.sh
   - sudo sh $TRAVIS_BUILD_DIR/.ci-scripts/install-caf.sh
 script:
-  - export CC=/usr/bin/gcc-6
-  - export CXX=/usr/bin/g++-6
-  - gcc -v && g++ -v && cd ./build && cmake .. && make
+  - cd ./build && cmake .. && make

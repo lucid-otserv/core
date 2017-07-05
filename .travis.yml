@@ -8,16 +8,18 @@ addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
+      - kalakris-cmake
     packages:
       - gcc-6
       - g++-6
       - cmake
 install:
+  - sudo ln -s /usr/bin/gcc-6 /usr/local/bin/gcc
+  - sudo ln -s /usr/bin/g++-6 /usr/local/bin/g++
   - git clone https://github.com/actor-framework/actor-framework.git
   - pushd actor-framework && ./configure && make && sudo make install && popd
+  - rm -Rf actor-framework
 script:
-  - ln -s /usr/bin/gcc-6 /usr/local/bin/gcc
-  - ln -s /usr/bin/g++-6 /usr/local/bin/g++
   - export CC=/usr/bin/gcc-6
   - export CXX=/usr/bin/g++-6
   - gcc -v && g++ -v && cd ./build && cmake .. && make

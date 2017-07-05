@@ -21,9 +21,6 @@ install:
   - sudo apt-get purge cmake
   - sudo sh .ci-scripts/install-cmake.sh
   - sudo sh .ci-scripts/install-caf.sh
-  - git clone https://github.com/actor-framework/actor-framework.git
-  - pushd actor-framework && ./configure && make && sudo make install && popd
-  - rm -Rf actor-framework
 script:
   - export CC=/usr/bin/gcc-6
   - export CXX=/usr/bin/g++-6

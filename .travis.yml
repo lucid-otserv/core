@@ -2,7 +2,7 @@ dist: trusty
 sudo: required
 cache:
   directories:
-  - $HOME/.cache/
+    - $HOME/.cache/
 language:
   - cpp
 compiler:

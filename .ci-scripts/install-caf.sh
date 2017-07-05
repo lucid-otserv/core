@@ -5,7 +5,7 @@ if [ -d $HOME/.cache/actor-framework ]; then
 else
     cd $HOME/.cache
     git clone https://github.com/actor-framework/actor-framework.git
-    git checkout 0.15.3
     cd actor-framework
+    git checkout 0.15.3
     ./configure && make && make install
 fi

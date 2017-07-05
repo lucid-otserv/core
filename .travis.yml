@@ -17,10 +17,8 @@ addons:
 install:
   - sudo ln -s /usr/bin/gcc-6 /usr/local/bin/gcc
   - sudo ln -s /usr/bin/g++-6 /usr/local/bin/g++
-  - sudo apt-get remove cmake
-  - sudo apt-get purge cmake
-  - sudo sh .ci-scripts/install-cmake.sh
-  - sudo sh .ci-scripts/install-caf.sh
+  - sudo sh $TRAVIS_BUILD_DIR/.ci-scripts/install-cmake.sh
+  - sudo sh $TRAVIS_BUILD_DIR/.ci-scripts/install-caf.sh
 script:
   - export CC=/usr/bin/gcc-6
   - export CXX=/usr/bin/g++-6

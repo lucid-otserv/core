@@ -59,6 +59,14 @@ matrix:
     - os: osx
       osx_image: xcode8
       env:
+        - CACHE_KEY=xcode8-gcc-5
+        - CC=gcc-5
+        - CXX=g++-5
+      before_install:
+        - brew install gcc5
+    - os: osx
+      osx_image: xcode8
+      env:
         - CACHE_KEY=xcode8-gcc-6
         - CC=gcc-6
         - CXX=g++-6

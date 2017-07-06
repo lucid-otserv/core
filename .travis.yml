@@ -19,6 +19,9 @@ matrix:
         - CACHE_KEY=trusty-gcc-5
         - CC=/usr/bin/gcc-5
         - CXX=/usr/bin/g++-5
+      compiler:
+        - gcc-5
+        - g++-5
     - os: linux
       dist: trusty
       addons:
@@ -32,6 +35,9 @@ matrix:
         - CACHE_KEY=trusty-gcc-6
         - CC=/usr/bin/gcc-6
         - CXX=/usr/bin/g++-6
+      compiler:
+        - gcc-6
+        - g++-6
     - os: linux
       dist: trusty
       addons:
@@ -44,6 +50,9 @@ matrix:
         - CACHE_KEY=trusty-clang-4.0
         - CC=clang-4.0
         - CXX=clang++-4.0
+      compiler:
+        - clang-4.0
+        - lang++-4.0
     - os: linux
       dist: trusty
       addons:
@@ -56,12 +65,18 @@ matrix:
         - CACHE_KEY=trusty-clang-5.0
         - CC=clang-5.0
         - CXX=clang++-5.0
+      compiler:
+        - clang-5.0
+        - lang++-5.0
     - os: osx
       osx_image: xcode8
       env:
         - CACHE_KEY=xcode8-gcc-5
         - CC=gcc-5
         - CXX=g++-5
+      compiler:
+        - gcc-5
+        - g++-5
       before_install:
         - brew install gcc5
     - os: osx
@@ -70,6 +85,9 @@ matrix:
         - CACHE_KEY=xcode8-gcc-6
         - CC=gcc-6
         - CXX=g++-6
+      compiler:
+        - gcc-6
+        - g++-6
       before_install:
         - brew install gcc
 install:

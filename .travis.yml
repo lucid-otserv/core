@@ -4,8 +4,6 @@ cache:
     - $HOME/.cache/
 language:
   - cpp
-compiler:
-  - gcc
 matrix:
   include:
     - os: linux
@@ -18,12 +16,24 @@ matrix:
             - gcc-6
             - g++-6
       env:
-         - OS=trusty
-         - CC=/usr/bin/gcc-6
-         - CXX=/usr/bin/g++-6
+        - CACHE_KEY=trusty-gcc-6
+        - CC=/usr/bin/gcc-6
+        - CXX=/usr/bin/g++-6
+    - os: linux
+      dist: trusty
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-precise-3.8
+          packages:
+            - clang-3.8
+      env:
+        - CACHE_KEY=trusty-clang-3.8
+        - CC=clang-3.8
+        - CXX=clang++-3.8
 install:
-  - sudo ln -s /usr/bin/gcc-6 /usr/local/bin/gcc
-  - sudo ln -s /usr/bin/g++-6 /usr/local/bin/g++
+  - mkdir -p $HOME/.cache/$CACHE_KEY
   - sudo sh $TRAVIS_BUILD_DIR/.ci-scripts/install-cmake.sh
   - sudo sh $TRAVIS_BUILD_DIR/.ci-scripts/install-caf.sh
 script:

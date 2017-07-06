@@ -2,13 +2,13 @@
 apt-get remove cmake
 apt-get purge cmake
 
-if [ -d $HOME/.cache/cmake-3.8.2 ]; then
+if [ -d $HOME/.cache/$CACHE_KEY/cmake-3.8.2 ]; then
     echo
     echo
     echo "Using cmake from cache."
     echo
     echo
-    cd $HOME/.cache/cmake-3.8.2
+    cd $HOME/.cache/$CACHE_KEY/cmake-3.8.2
     make install
 else
     echo
@@ -16,7 +16,7 @@ else
     echo "Building cmake from source."
     echo
     echo
-    cd $HOME/.cache
+    cd $HOME/.cache/$CACHE_KEY
     wget https://cmake.org/files/v3.8/cmake-3.8.2.tar.gz
     tar -zxf cmake-3.8.2.tar.gz
     cd cmake-3.8.2 && ./bootstrap && make && make install && cd ..

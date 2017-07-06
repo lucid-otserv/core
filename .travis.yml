@@ -49,8 +49,8 @@ matrix:
       osx_image: xcode8
       env:
         - CACHE_KEY=xcode8-gcc-6
-        - XCC=/usr/bin/gcc-6
-        - XCXX=/usr/bin/g++-6
+        - XCC=/usr/local/bin/gcc-6
+        - XCXX=/usr/local/bin/g++-6
       compiler: g++-6
       before_install:
         - brew install gcc
@@ -58,8 +58,8 @@ matrix:
       osx_image: xcode8
       env:
         - CACHE_KEY=xcode8-clang
-        - XCC=/usr/bin/clang
-        - XCXX=/usr/bin/clang++
+        - XCC=/usr/local/bin/clang
+        - XCXX=/usr/local/bin/clang++
       compiler: clang++
       before_install:
         - brew install --with-clang llvm

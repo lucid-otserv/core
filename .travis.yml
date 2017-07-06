@@ -24,14 +24,21 @@ matrix:
       addons:
         apt:
           sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-3.8
+            - llvm-toolchain-trusty
           packages:
-            - clang-3.8
+            - clang-5.0
       env:
-        - CACHE_KEY=trusty-clang-3.8
-        - CC=clang-3.8
-        - CXX=clang++-3.8
+        - CACHE_KEY=trusty-clang-5.0
+        - CC=clang-5.0
+        - CXX=clang++-5.0
+    - os: osx
+      osx_image: xcode8
+      env:
+        - CACHE_KEY=xcode8-gcc-6
+        - CC=gcc-6
+        - CXX=g++-6
+      before_install:
+        - brew install gcc
 install:
   - mkdir -p $HOME/.cache/$CACHE_KEY
   - sudo sh $TRAVIS_BUILD_DIR/.ci-scripts/install-cmake.sh

@@ -73,6 +73,12 @@ matrix:
       before_install:
         - brew install gcc
 install:
+  - export CC=${CC}
+  - export CXX=${CXX}
+  - export CACHE_KEY=${CACHE_KEY}
+  - echo "CC is ${CC}"
+  - echo "CXX is ${CXX}"
+  - echo "CACHE_KEY is ${CACHE_KEY}"
   - mkdir -p $HOME/.cache/$CACHE_KEY
   - sudo sh $TRAVIS_BUILD_DIR/.ci-scripts/install-cmake.sh
   - sudo sh $TRAVIS_BUILD_DIR/.ci-scripts/install-caf.sh

@@ -54,6 +54,8 @@ matrix:
       compiler: g++-6
       before_install:
         - brew install gcc
+        - echo "$(which gcc)"
+        - echo "$(which gcc-6)"
     - os: osx
       osx_image: xcode8
       env:

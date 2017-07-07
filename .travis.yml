@@ -19,6 +19,20 @@ matrix:
         - XCC=/usr/bin/gcc-6
         - XCXX=/usr/bin/g++-6
       compiler: g++-6
+  include:
+    - os: linux
+      dist: trusty
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-7
+      env:
+        - CACHE_KEY=trusty-gcc-7
+        - XCC=/usr/bin/gcc-7
+        - XCXX=/usr/bin/g++-7
+      compiler: g++-7
     - os: linux
       dist: trusty
       addons:

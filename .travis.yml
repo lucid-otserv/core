@@ -67,8 +67,8 @@ matrix:
       compiler: g++6
       before_install:
         - brew install gcc@6
-        - sudo ln -s /usr/local/bin/gcc-6 /usr/bin/gcc
-        - sudo ln -s /usr/local/bin/g++-6 /usr/bin/g++
+        - sudo ln -s /usr/local/bin/gcc-6 /usr/local/bin/gcc
+        - sudo ln -s /usr/local/bin/g++-6 /usr/local/bin/g++
         - echo "$(which gcc)"
         - echo "$(which g++)"
         - gcc --version
@@ -82,8 +82,8 @@ matrix:
       compiler: g++7
       before_install:
         - brew install gcc@7
-        - sudo ln -s /usr/local/bin/gcc-7 /usr/bin/gcc
-        - sudo ln -s /usr/local/bin/g++-7 /usr/bin/g++
+        - sudo ln -s /usr/local/bin/gcc-7 /usr/local/bin/gcc
+        - sudo ln -s /usr/local/bin/g++-7 /usr/local/bin/g++
         - echo "$(which gcc)"
         - echo "$(which g++)"
         - gcc --version

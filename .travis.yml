@@ -67,8 +67,8 @@ matrix:
       compiler: g++6
       before_install:
         - brew install gcc@6
-        - echo "$(which gcc-6)"
-        - echo "$(which g++-6)"
+        - echo "$(which gcc)"
+        - echo "$(which g++)"
         - gcc-6 --version
         - g++-6 --version
     - os: osx
@@ -77,11 +77,11 @@ matrix:
         - CACHE_KEY=xcode8-gcc-7
         - XCC=/usr/local/bin/gcc-7
         - XCXX=/usr/local/bin/g++-7
-      compiler: g++6
+      compiler: g++7
       before_install:
         - brew install gcc@7
-        - echo "$(which gcc-7)"
-        - echo "$(which g++-7)"
+        - echo "$(which gcc)"
+        - echo "$(which g++)"
         - gcc-7 --version
         - g++-7 --version
     - os: osx

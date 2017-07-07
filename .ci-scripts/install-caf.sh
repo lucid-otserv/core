@@ -17,5 +17,10 @@ else
     git clone https://github.com/actor-framework/actor-framework.git
     cd actor-framework
     git checkout 0.15.3
-    ./configure && make && make install
+    if [[ $CACHE_KEY == *"xcode8-gcc"* ]]; then
+        ./configure --with-gcc=$XCCX
+    else
+        ./configure
+    fi
+    make && make install
 fi

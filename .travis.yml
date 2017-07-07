@@ -67,10 +67,12 @@ matrix:
       compiler: g++6
       before_install:
         - brew install gcc@6
+        - sudo ln -s /usr/local/bin/gcc-6 /usr/bin/gcc
+        - sudo ln -s /usr/local/bin/g++-6 /usr/bin/g++
         - echo "$(which gcc)"
         - echo "$(which g++)"
-        - gcc-6 --version
-        - g++-6 --version
+        - gcc --version
+        - g++ --version
     - os: osx
       osx_image: xcode8
       env:
@@ -80,10 +82,12 @@ matrix:
       compiler: g++7
       before_install:
         - brew install gcc@7
+        - sudo ln -s /usr/local/bin/gcc-7 /usr/bin/gcc
+        - sudo ln -s /usr/local/bin/g++-7 /usr/bin/g++
         - echo "$(which gcc)"
         - echo "$(which g++)"
-        - gcc-7 --version
-        - g++-7 --version
+        - gcc --version
+        - g++ --version
     - os: osx
       osx_image: xcode8
       env:

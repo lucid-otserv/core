@@ -19,7 +19,6 @@ matrix:
         - XCC=/usr/bin/gcc-6
         - XCXX=/usr/bin/g++-6
       compiler: g++-6
-  include:
     - os: linux
       dist: trusty
       addons:

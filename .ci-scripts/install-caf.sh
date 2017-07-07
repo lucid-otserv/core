@@ -18,7 +18,9 @@ else
     cd actor-framework
     git checkout 0.15.3
     if [[ $CACHE_KEY == *"xcode8-gcc"* ]]; then
-        ./configure --with-gcc=$XCCX
+        ./configure --with-gcc=$XCXX
+    elif [[ $CACHE_KEY == *"xcode8-clang"* ]]; then
+        ./configure --with-clang=$XCXX
     else
         ./configure
     fi

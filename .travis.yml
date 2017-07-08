@@ -58,38 +58,38 @@ matrix:
         - XCC=clang-5.0
         - XCXX=clang++-5.0
       compiler: clang++-5.0
-    - os: osx
-      osx_image: xcode8
-      env:
-        - CACHE_KEY=xcode8-gcc-6
-        - XCC=/usr/local/bin/gcc-6
-        - XCXX=/usr/local/bin/g++-6
-      compiler: g++6
-      before_install:
-        - brew install gcc@6
-      after_install:
-        - sudo ln -s /usr/local/bin/gcc-6 /usr/local/bin/gcc
-        - sudo ln -s /usr/local/bin/g++-6 /usr/local/bin/g++
-        - echo "$(which gcc)"
-        - echo "$(which g++)"
-        - gcc --version
-        - g++ --version
-    - os: osx
-      osx_image: xcode8
-      env:
-        - CACHE_KEY=xcode8-gcc-7
-        - XCC=/usr/local/bin/gcc-7
-        - XCXX=/usr/local/bin/g++-7
-      compiler: g++7
-      before_install:
-        - brew install gcc@7
-      after_install:
-        - sudo ln -s /usr/local/bin/gcc-7 /usr/local/bin/gcc
-        - sudo ln -s /usr/local/bin/g++-7 /usr/local/bin/g++
-        - echo "$(which gcc)"
-        - echo "$(which g++)"
-        - gcc --version
-        - g++ --version
+    # - os: osx
+    #   osx_image: xcode8
+    #   env:
+    #     - CACHE_KEY=xcode8-gcc-6
+    #     - XCC=/usr/local/bin/gcc-6
+    #     - XCXX=/usr/local/bin/g++-6
+    #   compiler: g++6
+    #   before_install:
+    #     - brew install gcc@6
+    #   after_install:
+    #     - sudo ln -s /usr/local/bin/gcc-6 /usr/local/bin/gcc
+    #     - sudo ln -s /usr/local/bin/g++-6 /usr/local/bin/g++
+    #     - echo "$(which gcc)"
+    #     - echo "$(which g++)"
+    #     - gcc --version
+    #     - g++ --version
+    # - os: osx
+    #   osx_image: xcode8
+    #   env:
+    #     - CACHE_KEY=xcode8-gcc-7
+    #     - XCC=/usr/local/bin/gcc-7
+    #     - XCXX=/usr/local/bin/g++-7
+    #   compiler: g++7
+    #   before_install:
+    #     - brew install gcc@7
+    #   after_install:
+    #     - sudo ln -s /usr/local/bin/gcc-7 /usr/local/bin/gcc
+    #     - sudo ln -s /usr/local/bin/g++-7 /usr/local/bin/g++
+    #     - echo "$(which gcc)"
+    #     - echo "$(which g++)"
+    #     - gcc --version
+    #     - g++ --version
     - os: osx
       osx_image: xcode8
       env:

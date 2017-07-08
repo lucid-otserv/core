@@ -67,6 +67,7 @@ matrix:
       compiler: g++6
       before_install:
         - brew install gcc@6
+      after_install:
         - sudo ln -s /usr/local/bin/gcc-6 /usr/local/bin/gcc
         - sudo ln -s /usr/local/bin/g++-6 /usr/local/bin/g++
         - echo "$(which gcc)"
@@ -82,6 +83,7 @@ matrix:
       compiler: g++7
       before_install:
         - brew install gcc@7
+      after_install:
         - sudo ln -s /usr/local/bin/gcc-7 /usr/local/bin/gcc
         - sudo ln -s /usr/local/bin/g++-7 /usr/local/bin/g++
         - echo "$(which gcc)"
@@ -100,8 +102,6 @@ matrix:
 install:
   - export CC=${XCC}
   - export CXX=${XCXX}
-  - echo "CC=${CC}"
-  - echo "CXX=${CXX}"
   - echo "CACHE_KEY=${CACHE_KEY}"
   - mkdir -p $HOME/.cache/$CACHE_KEY
   - sudo sh $TRAVIS_BUILD_DIR/.ci-scripts/install-cmake.sh
